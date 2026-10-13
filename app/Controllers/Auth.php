@@ -51,9 +51,10 @@ class Auth extends BaseController
             $session->set([
                 'id_usuario' => $usuario['id'],
                 'nombre'     => $usuario['nombre'],
+                'es_admin'   => $usuario['es_admin'],
                 'isLoggedIn' => true
             ]);
-            return redirect()->to(site_url('/'));
+            return redirect()->to(site_url('/'))->with('success', 'Inicio de sesión exitoso.');
         }
 
         return redirect()->back()->with('error', 'Credenciales incorrectas');
@@ -62,6 +63,6 @@ class Auth extends BaseController
     public function logout()
     {
         session()->destroy();
-        return redirect()->to(site_url('login'));
+        return redirect()->to(site_url('login'))->with('success', 'Sesión finalizada con éxito.');
     }
 }
