@@ -15,7 +15,7 @@
             <label for="remember" class="form-check-label"><?= lang('Textos.remember_me') ?></label>
         </div>
         <div class="mb-3">
-            <a href="#" class="text-decoration-none"><?= lang('Textos.forgot_password') ?></a>
+            <a href="<?= site_url('forgot-password') ?>" class="text-decoration-none"><?= lang('Textos.forgot_password') ?></a>
         </div>
         <div class="d-flex gap-2">
             <button type="submit" class="btn btn-success px-4"><?= lang('Textos.login') ?></button>
